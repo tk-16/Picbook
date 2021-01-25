@@ -1,18 +1,27 @@
-<div class="contents row">
-  <div class="content_post" style="background-image: url(<%= @book.image %>);">
-    <div class="more">
+<div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+        <% if user_signed_in? && current_user.id == @book.user_id %>
+          <li>
+            <%= link_to '編集', edit_book_path(@book.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', book_path(@book.id), method: :delete %>
+          </li>
+        <% end %>
+          <%= image_tag @book.image, class: "item-img" if @book.image.attached? %>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= @book.title %></a>
+            </h4>
+            <div class="card-story">
+              <p><%= @book.story %></p>
+            </div>
+            <div class="card-impression">
+              <p><%= @book.impression %></p>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_book_path(@book.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', book_path(@book.id), method: :delete %>
-        </li>
-      </ul>
     </div>
-    <p><%= @book.story %></p>
-    <span class="name"><%= @book.title %>
-    </span>
-  </div>
-</div>
