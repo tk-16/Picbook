@@ -186,9 +186,42 @@ bodys{
 
 .item-img {
   width: 348px;
-  height: 40vh;
+  height: 35vh;
 }
 
 .card-body{
-  height: 348px;
+  height: 450px;
+}
+
+.card-title{
+  background: #3cb3e4;
+  padding: 5px 15px;
+  border-radius: 0 10px 0 10px;
+  color: #fff;
+}
+
+.card-story{
+  padding: 0.5em 1em;
+  margin:  2em 0;
+  border: double 5px #4ec4d3;
+  height: 150px;
+  overflow: scroll;
+}
+
+.card-story p{
+  margin: 0;
+  padding: 0;
+}
+
+.card-impression{
+  padding: 0.5em 1em;
+  margin:  2em 0;
+  border: double 5px #4ec4d3;
+  height: 150px;
+  overflow: scroll;
+}
+
+.card-impression p{
+  margin: 0;
+  padding: 0;
 }
