@@ -56,6 +56,9 @@
     <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
+        <li>
+            <%= link_to '削除', book_path(book.id), method: :delete %>
+          </li>
           <%= image_tag book.image, class: "item-img" if book.image.attached? %>
           <div class="card-body">
             <h4 class="card-title">
