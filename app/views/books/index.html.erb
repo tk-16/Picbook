@@ -56,7 +56,10 @@
     <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-        <li>
+          <li>
+            <%= link_to '編集', edit_book_path(book.id), method: :get %>
+          </li>
+          <li>
             <%= link_to '削除', book_path(book.id), method: :delete %>
           </li>
           <%= image_tag book.image, class: "item-img" if book.image.attached? %>
