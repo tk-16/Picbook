@@ -3,14 +3,7 @@
     <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <% if user_signed_in? && current_user.id == book.user_id %>
-            <li>
-              <%= link_to '編集', edit_book_path(book.id), method: :get %>
-            </li>
-            <li>
-              <%= link_to '削除', book_path(book.id), method: :delete %>
-            </li>
-          <% end %>
+          
           <div class="card-body">
             <%= image_tag book.image, class: "item-img" if book.image.attached? %>
             <h4 class="card-title">
@@ -24,6 +17,15 @@
             <div class="card-impression">
               <p><%= book.impression %></p>
             </div>
+            <% if user_signed_in? && current_user.id == book.user_id %>
+            <div class="cp_navi">
+            <ul class="menu-bars">
+              <li class="menu-bar"><%= link_to '編集', edit_book_path(book.id), method: :get %></li>
+              <li class="menu-bar"><%= link_to '削除', book_path(book.id), method: :delete %></li>
+             
+            </ul>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>
