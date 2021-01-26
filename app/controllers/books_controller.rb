@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_book, only: [:edit, :show]
   def index
     @books = Book.includes(:user)
@@ -39,6 +39,11 @@ class BooksController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def search
+    @books = SearchBooksService.search(params[:keyword])
+  end
+
 
   private
   def book_params
