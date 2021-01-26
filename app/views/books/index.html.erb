@@ -12,9 +12,9 @@
         <div> 
         <%= image_tag "susan-yin-2JIvboGLeho-unsplash.jpg", class: "carousel-item active" %>
           
-          <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
+          <div class="carousel-caption">
+            <h3>新たな絵本との出会い</h3>
+            <p>~子供たちの笑顔のために~</p>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -64,14 +64,17 @@
             <%= link_to '削除', book_path(book.id), method: :delete %>
           </li>
         <% end %>
-          <%= image_tag book.image, class: "item-img" if book.image.attached? %>
+          
           <div class="card-body">
+            <%= image_tag book.image, class: "item-img" if book.image.attached? %>
             <h4 class="card-title">
               <%= link_to book.title, book_path(book.id), method: :get %>
             </h4>
+            <p class="caption">story<p>
             <div class="card-story">
               <p><%= book.story %></p>
             </div>
+            <p class="caption">impression<p>
             <div class="card-impression">
               <p><%= book.impression %></p>
             </div>
