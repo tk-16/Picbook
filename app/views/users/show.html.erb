@@ -1,23 +1,30 @@
+ <h1 class="my-4">投稿一覧</h1>
  <div class="row">
     <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-        <% if user_signed_in? && current_user.id == book.user_id %>
-          <li>
-            <%= link_to '編集', edit_book_path(book.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', book_path(book.id), method: :delete %>
-          </li>
-        <% end %>
-          <%= image_tag book.image, class: "item-img" if book.image.attached? %>
+          <% if user_signed_in? && current_user.id == book.user_id %>
+            <li>
+              <%= link_to '編集', edit_book_path(book.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', book_path(book.id), method: :delete %>
+            </li>
+          <% end %>
           <div class="card-body">
+            <%= image_tag book.image, class: "item-img" if book.image.attached? %>
             <h4 class="card-title">
-              <a href="#"><%= book.title %></a>
+              <%= link_to book.title, book_path(book.id), method: :get %>
             </h4>
-            <p class="card-text"><%= book.story %></p>
+            <p class="caption">story<p>
+            <div class="card-story">
+              <p><%= book.story %></p>
+            </div>
+            <p class="caption">impression<p>
+            <div class="card-impression">
+              <p><%= book.impression %></p>
+            </div>
           </div>
-          
         </div>
       </div>
     <% end %>
