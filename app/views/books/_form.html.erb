@@ -1,0 +1,9 @@
+<div class="login">
+    <%= form_with(model: book, local: true) do |form| %>
+      <%= form.file_field :image, class: 'hidden' %>
+      <%= form.text_field :title, placeholder: "Title" %>
+      <%= form.text_area :story, placeholder: "Story", rows: "5" %>
+      <%= form.text_area :impression, placeholder: "text", rows: "5" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+    </div>
