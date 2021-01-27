@@ -66,6 +66,7 @@
             <a href="/users/<%= book.user.id %>">
              <span>投稿者</span><%= book.user.nickname %>
             </a>
+            <%= render 'likes/like', book: book %>
         </div>
       </div>
       
