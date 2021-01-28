@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes, dependent: :destroy
   has_many :like_books, through: :likes, source: :book
+
+  
+  validates :nickname,presence: true 
+  
 end
