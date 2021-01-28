@@ -24,6 +24,7 @@
             </ul>
             </div>
             <% end %>
+            <%= render 'likes/like', book: @book %>
             <div class="container">
               <% if user_signed_in? %>
                 <%= form_with(model: [@book, @comment], local: true) do |form| %>

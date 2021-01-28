@@ -1,4 +1,4 @@
- <h1 class="my-4">投稿一覧</h1>
+ <h1 class="my-4"><%= @nickname %></h1>
  <div class="row">
     <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -26,6 +26,7 @@
             </ul>
             </div>
             <% end %>
+            <%= render 'likes/like', book: book %>
           </div>
         </div>
       </div>
