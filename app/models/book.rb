@@ -5,8 +5,10 @@ class Book < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
 
-
-  validates :title, presence: true
-  validates :story, presence: true
-  validates :impression, presence: true
+  with_options presence: true do
+    validates :title
+    validates :story
+    validates :impression
+    validates :image
+  end
 end
