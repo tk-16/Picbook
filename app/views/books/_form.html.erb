@@ -1,5 +1,7 @@
 <div class="login">
     <%= form_with(model: book, local: true) do |form| %>
+        <%= render 'devise/shared/error_messages', model: form.object %>
+
       <%= form.file_field :image, class: 'hidden' %>
       <div id="image-list"></div>
       <%= form.text_field :title, placeholder: "Title" %>

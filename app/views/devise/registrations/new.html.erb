@@ -6,7 +6,7 @@
     <br>
     <div class="login">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render 'devise/shared/error_messages', model: f.object %>
 
           <div class="field">
             <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
