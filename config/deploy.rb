@@ -2,7 +2,7 @@
 lock '3.15.0'
 
 # Capistranoのログの表示に利用する
-set :application, 'Picbbok'
+set :application, 'Picbook'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:tk-16/Picbook.git'
