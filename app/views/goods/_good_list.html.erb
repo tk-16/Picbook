@@ -1,0 +1,12 @@
+<% if @items.present? %>
+  <% @items.each do |good| %>
+    <div class="list">
+    <% if good.image_flag %>
+      <%= link_to (image_tag(good.small_image_urls[0], style: "width: 70px;height: 100px;display: inline-block;")), good.url %>
+      <%end%>
+ 
+      <%= good.name %>
+      <%= good.price %>円
+    </div>
+  <% end %>
+<% end %>
