@@ -38,148 +38,7 @@
   margin-bottom: 30px;
 }
 
-// new↓
-@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-
-bodys{
-  margin: 0;
-  padding: 0;
-  background: #fff;
-
-  color: #fff;
-  font-family: Arial;
-  font-size: 12px;
-}
-
-.bodys{
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -40px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background-image: url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
-  background-size: cover;
-  -webkit-filter: blur(5px);
-  z-index: 0;
-}
-
-.grad{
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -40px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-  z-index: 1;
-  opacity: 0.7;
-}
-
-.headers{
-  position: absolute;
-  top: calc(50% - 35px);
-  left: calc(50% - 255px);
-  z-index: 2;
-}
-
-.headers div{
-  float: left;
-  color: #fff;
-  font-family: 'Exo', sans-serif;
-  font-size: 35px;
-  font-weight: 200;
-}
-
-.headers div span{
-  color: #5379fa !important;
-}
-
-.login{
-  position: absolute;
-  top: calc(50% - 75px);
-  left: calc(50% - 50px);
-  height: 150px;
-  width: 350px;
-  padding: 10px;
-  z-index: 2;
-}
-
-.login input[type=text]{
-  width: 250px;
-  height: 30px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 2px;
-  color: #fff;
-  font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 4px;
-}
-
-.login input[type=password]{
-  width: 250px;
-  height: 30px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 2px;
-  color: #fff;
-  font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 4px;
-  margin-top: 10px;
-}
-
-.login input[type=button]{
-  width: 260px;
-  height: 35px;
-  background: #fff;
-  border: 1px solid #fff;
-  cursor: pointer;
-  border-radius: 2px;
-  color: #a18d6c;
-  font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 6px;
-  margin-top: 10px;
-}
-
-.login input[type=button]:hover{
-  opacity: 0.8;
-}
-
-.login input[type=button]:active{
-  opacity: 0.6;
-}
-
-.login input[type=text]:focus{
-  outline: none;
-  border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=password]:focus{
-  outline: none;
-  border: 1px solid rgba(255,255,255,0.9);
-}
-
-.login input[type=button]:focus{
-  outline: none;
-}
-
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
+// 一覧ページ
 .row{
   display: flex;
 }
@@ -269,9 +128,11 @@ bodys{
 }
 
 .container{
-  margin-top: 10px;
+  padding-top: 10px;
 }
-
+.backimg{
+  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+}
 // menu bar↓↓↓
 
 .cp_navi {
@@ -381,3 +242,119 @@ img{
   width: 30%;
   height: 100px;
 }
+
+// ログイン・新規登録
+
+html{
+  height: 110vh;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%),url(susan-yin-2JIvboGLeho-unsplash.jpg);
+  background-size: cover;
+}
+
+.main {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 100%;
+  padding-bottom: 30px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: #8C55AA;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 5px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+  padding-top: 40px;
+  height: 200px;
+}
+
+.pass {
+      width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 5px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+  
+}
+
+.submit {
+cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  padding-top: 15px;
+}
+
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  text-decoration: none
+}
+
+@media (max-width: 600px) {
+  .main {
+      border-radius: 0px;
+  }
+}
+
