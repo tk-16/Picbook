@@ -1,13 +1,11 @@
-<div class="login">
-    <%= form_with(model: book, local: true) do |form| %>
-        <%= render 'devise/shared/error_messages', model: form.object %>
+<%= form_with(model: book, local: true) do |f| %>
+  <%= render 'devise/shared/error_messages', model: f.object %>
 
-      <%= form.file_field :image, class: 'hidden' %>
-      <div id="image-list"></div>
-      <%= form.text_field :title, placeholder: "Title" %>
-      <%= form.text_area :story, placeholder: "Story", rows: "5" %>
-      <%= form.text_area :impression, placeholder: "text", rows: "5" %>
-      <%= form.submit "SEND" %>
-      
-    <% end %>
-    </div>
+  <form class="form1">
+    <%= f.file_field :image, class: 'hidden' %>
+    <div id="image-list"></div>
+    <%= f.text_field :title,class:"un", placeholder: "Title" %>
+    <%= f.text_area :story,class:"un", placeholder: "Story", rows: "5" %>
+    <%= f.text_area :impression,class:"un", placeholder: "text", rows: "5" %>
+    <%= f.submit "SEND",class:"submit" %>       
+<% end %>
