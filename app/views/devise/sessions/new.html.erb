@@ -1,27 +1,9 @@
-<div class="bodys"></div>
-    <div class="grad"></div>
-    <div class="headers">
-      <div><span>ログイン</span></div>
-    </div>
-    <br>
-    <div class="login">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-          <div class="field-email">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-
-          <div class="field-password">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
-      <% end %>
-    </div>
-
-
-
+<div class="main">
+  <p class="sign" align="center">ログイン</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <form class="form1">
+      <%= f.email_field :email, class:"un", autofocus: true, autocomplete: "email",placeholder:"Email" %>
+      <%= f.password_field :password, class:"pass", autocomplete: "current-password",placeholder:"Password"  %>
+      <%= f.submit "Log in", class:"submit" %>
+  <% end %>
+</div>
