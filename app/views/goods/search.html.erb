@@ -1,13 +1,12 @@
-<h1>Rakuserach</h1>
+<h1>楽天検索</h1>
 <div class='content'>
   <div id="search-box">
     <%= form_tag :goods_search, method: :get do %>
-        <%= label_tag :keyword, 'キーワード検索' %>
-      <%= text_field_tag 'keyword', params[:keyword] %>
-      <%= submit_tag "検索" %>
+      <%= text_field_tag 'keyword', params[:keyword],placeholder: "キーワード検索",class: "search-input" %>
+      <%= submit_tag "検索",class: "search-btn" %>
       <% end %>
   </div>
-  <h2>検索結果</h2>
+  <h2 class="sample">検索結果</h2>
   <%= flash[:danger] %>
   <div id='good_list'>
      <%= render partial: 'good_list' %>
