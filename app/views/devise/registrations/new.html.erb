@@ -5,8 +5,14 @@
     <form class="form1">
       <%= f.text_field :nickname, class:"un", autofocus: true,placeholder:"Nickname" %>
       <%= f.email_field :email, class:"un", autofocus: true, autocomplete: "email",placeholder:"Email" %>
-      <%= f.password_field :password, class:"pass", autocomplete: "current-password",placeholder:"Password"  %>
-      <%= f.password_field :password_confirmation, class:"pass", autocomplete: "new-password",placeholder:"Password_confirmation" %>
+      <%if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
+        <%= f.password_field :password, class:"pass", autocomplete: "current-password",placeholder:"Password"  %>
+        <%= f.password_field :password_confirmation, class:"pass", autocomplete: "new-password",placeholder:"Password_confirmation" %>
+      <% end %>
       <%= f.submit "Sign up", class:"submit" %>
   <% end %>
+  <div class="app-login"><%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post,class:"app-submit"%></div>
+  <div class="app-login"><%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post,class:"app-submit"%></div>
 </div>

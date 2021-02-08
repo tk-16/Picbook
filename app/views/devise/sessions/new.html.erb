@@ -6,4 +6,6 @@
       <%= f.password_field :password, class:"pass", autocomplete: "current-password",placeholder:"Password"  %>
       <%= f.submit "Log in", class:"submit" %>
   <% end %>
+  <div class="app-login"><%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post,class:"app-submit"%></div>
+  <div class="app-login"><%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post,class:"app-submit"%></div>
 </div>
