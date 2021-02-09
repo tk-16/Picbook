@@ -6,7 +6,7 @@
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
         <div> 
-        <%= image_tag "kermit-1673468_1920.jpg", class: "carousel-item active" %>
+        <%= image_tag "people-2604837_1920.jpg", class: "carousel-item active" %>
           
           <div class="carousel-caption">
             <h3>新たな絵本との出会い</h3>
@@ -66,11 +66,12 @@
             </ul>
             </div>
             <% end %>
-          </div>
             <a href="/users/<%= book.user.id %>">
              <span>投稿者</span><%= book.user.nickname %>
             </a>
             <%= render 'likes/like', book: book %>
+          </div>
+            
         </div>
       </div>
       
