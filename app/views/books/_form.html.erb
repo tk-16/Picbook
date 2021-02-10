@@ -2,10 +2,15 @@
   <%= render 'devise/shared/error_messages', model: f.object %>
 
   <form class="form1">
-    <%= f.file_field :image, class: 'hidden' %>
+  
+    <%= f.file_field :image, class: 'hidden'%>
+    <% if book.image.attached? %>
+     <%= image_tag book.image%>
+    <% end %>
     <div id="image-list"></div>
+    
     <%= f.text_field :title,class:"un", placeholder: "Title" %>
     <%= f.text_area :story,class:"un", placeholder: "Story", rows: "5" %>
-    <%= f.text_area :impression,class:"un", placeholder: "text", rows: "5" %>
+    <%= f.text_area :impression,class:"un", placeholder: "Impression", rows: "5" %>
     <%= f.submit "SEND",class:"submit" %>       
 <% end %>
