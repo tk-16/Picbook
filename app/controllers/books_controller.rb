@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_book, only: [:edit, :show]
   def index
-    @books = Book.includes(:user)
+    @books = Book.includes(:user).order("created_at DESC")
   end
 
   def new
