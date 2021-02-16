@@ -83,3 +83,6 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth', '~>1.9.1'
 
 gem "aws-sdk-s3", require: false
+
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
