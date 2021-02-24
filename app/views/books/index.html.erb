@@ -1,7 +1,4 @@
-
-
-  
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
@@ -9,8 +6,9 @@
         <%= image_tag "people-2604837_1920.jpg", class: "carousel-item active" %>
           
           <div class="carousel-caption">
-            <h3>新たな絵本との出会い</h3>
-            <p>~子供たちの笑顔のために~</p>
+            <h3>好きな絵本を広めよう</h3>
+            <p>お気に入りの絵本の画像、あらすじ、感想を投稿することで<br>
+            多くの人に広めることができるアプリケーションです。</p>
           </div>
         </div>
         
@@ -27,10 +25,6 @@
 
 
     <h1 class="my-4">投稿一覧</h1>
-
-
-    <!-- Portfolio Section -->
-
     
       <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
@@ -59,11 +53,11 @@
             </div>
             <% if user_signed_in? && current_user.id == book.user_id %>
             <div class="cp_navi">
-            <ul class="menu-bars">
-              <li class="menu-bar"><%= link_to '編集', edit_book_path(book.id), method: :get %></li>
-              <li class="menu-bar"><%= link_to '削除', book_path(book.id), method: :delete %></li>
-             
-            </ul>
+              <ul class="menu-bars">
+                <li class="menu-bar"><%= link_to '編集', edit_book_path(book.id), method: :get %></li>
+                <li class="menu-bar"><%= link_to '削除', book_path(book.id), method: :delete %></li>
+              
+              </ul>
             </div>
             <% end %>
             <a href="/users/<%= book.user.id %>">
@@ -76,46 +70,9 @@
       </div>
       
     <% end %>
-    </div>
+  </div>
           <%= paginate @books %>
 
-    <!-- /.row -->
-
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-      </div>
-    </div>
-
-  </div>
 </div>
   <!-- /.container -->
 
